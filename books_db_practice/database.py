@@ -5,22 +5,22 @@ import sqlite3
 CREATE_TABLE = "CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, title TEXT, author TEXT, genre TEXT, rating INTEGER)"
 
 # Create new entry:
-INSERT_BOOK = "INSERT INTO books (title, author, genre, rating) VALUE (?, ?, ?, ?)"
+INSERT_BOOK = "INSERT INTO books (title, author, genre, rating) VALUES (?, ?, ?, ?)"
 
 # Show all:
-SHOW_ALL = "SELECT (title, author, genre, rating) FROM books"
+SHOW_ALL = "SELECT title, author, genre, rating FROM books"
 
 # Show all in descending rating order:
-SHOW_ALL_RATINGS = "SELECT (title, author, genre, rating) FROM books ORDER rating DESC"
+SHOW_ALL_RATINGS = "SELECT title, author, genre, rating FROM books ORDER rating DESC"
 
 # Show only the highest rated item:
-SHOW_TOP = "SELECT (title, author, genre, rating) FROM books ORDER rating DESC LIMIT 1"
+SHOW_TOP = "SELECT title, author, genre, rating FROM books ORDER rating DESC LIMIT 1"
 
 # Show all by author:
-SEARCH_AUTHOR = "SELECT (title, author, genre, rating) FROM books WHERE author = ?"
+SEARCH_AUTHOR = "SELECT title, author, genre, rating FROM books WHERE author = ?"
 
 # Show one by title:
-SEARCH_TITLE = "SELECT (title, author, genre, rating) FROM books where title = ?"
+SEARCH_TITLE = "SELECT title, author, genre, rating FROM books where title = ?"
 
 # Delete from database:
 DELETE_ITEM = "DELETE FROM books WHERE title = ?"

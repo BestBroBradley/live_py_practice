@@ -20,7 +20,6 @@ def create_tables(connection):
     with connection:
         connection.execute(CREATE_BEANS_TABLE)
 
-
 def add_bean(connection, name, method, rating):
     with connection:
         connection.execute(INSERT_BEAN, (name, method, rating))
