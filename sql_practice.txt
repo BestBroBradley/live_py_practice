@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS beans (id INTEGER PRIMARY KEY, name TEXT, method TEXT, rating INTEGER)
+
+INSERT INTO beans VALUES (1, "Exclusive Blend", "Percolator", 65)
+
+SELECT * FROM beans
+
+SELECT name, method, rating, FROM beans
+
+SELECT name, method, rating FROM beans ORDER by rating DESC
+
+SELECT method, rating, FROM beans ORDER BY rating DESC LIMIT 1
+
+SELECT * FROM beans WHERE name = "Exclusive Blend" ORDER BY rating DESC LIMIT 1
+
+SELECT method FROM beans GROUP BY method
+
+SELECT method, AVG(rating) FROM beans GROUP BY method
