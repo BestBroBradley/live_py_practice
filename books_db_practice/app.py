@@ -59,9 +59,12 @@ def search_title(connection):
 def search_author(connection):
     query = input("What author would you like to search? ")
     results = database.author_query(connection, query)
-    
-
-    print(f"Search results: {result[0]} by {result[1]} (Genre: {result[2]}, Rating: {result[3]}/10)")
+    if results:
+        print(f"Search results for {query}:")
+        for result in results:
+            print(f"    -{result[0]} (Genre: {result[2]}, Rating: {result[3]}/10)")
+    else:
+        print(f"Looks like that author doesn't have any titles in your database.")
 
 
 def add(connection):
